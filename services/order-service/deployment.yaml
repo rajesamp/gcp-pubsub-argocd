@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pubsub-publisher
+  namespace: order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pubsub-publisher
+  template:
+    metadata:
+      labels:
+        app: pubsub-publisher
+    spec:
+      containers:
+      - name: pubsub-publisher
+        image: gcr.io/your-gcp-project-id/pubsub-publisher:latest
+        env:
+        - name: GCP_PROJECT_ID
+          value: "your-gcp-project-id"
+        - name: PUBSUB_TOPIC_ID
+          value: "rajsam-order-topic"
+        volumeMounts:
+        - name: order-message-config
+          mountPath: /app/order_message.yaml
+          subPath: order_message.yaml
+      volumes:
+      - name: order-message-config
+        configMap:
+          name: order-message-config

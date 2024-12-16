@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-message-config
+  namespace: order-service
+data:
+  order_message.yaml: |
+    order_id: "12345"
+    customer_name: "Rajsam"
+    amount: 199.99
+    status: "CONFIRMED"

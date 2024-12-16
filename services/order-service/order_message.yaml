@@ -1,0 +1,4 @@
+order_id: "12345"
+customer_name: "Rajsam"
+amount: 199.99
+status: "CONFIRMED"
