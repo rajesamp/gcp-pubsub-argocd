@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"io/ioutil"
 	"log"
 	"os"
 	"time"
@@ -35,7 +34,7 @@ func main() {
 	defer cancel()
 
 	// Read the YAML file
-	yamlFile, err := ioutil.ReadFile("order_message.yaml")
+	yamlFile, err := os.ReadFile("order_message.yaml")
 	if err != nil {
 		log.Fatalf("Failed to read YAML file: %v", err)
 	}
