@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # gcp-pubsub-argocd
 =======
 # Kubernetes Configurations Repository
@@ -18,4 +17,3 @@ This repository contains Kubernetes configurations and related files for deployi
 1. Clone the repository:
    ```bash
    git clone https://github.com/rajesamp/gcp-pubsub-argocd
->>>>>>> 2afd9f1 (Initial commit)
